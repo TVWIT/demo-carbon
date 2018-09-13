@@ -17,7 +17,6 @@
     "build-js": "browserify -p bundle-collapser/plugin src/index.js -t [ envify --NODE_ENV production ] -t babelify -g aliasify -g unassertify -g uglifyify | uglifyjs -mc > public/bundle.js",
     "build-css": "node-sass --output-style=compressed src/style/main.scss > public/style.css",
     "sass-watch": "node-sass --watch src/style/main.scss --source-map-embed public/style.css",
-    "prepush": "./test/githook/prepush.sh",
     "preversion": "npm run lint && npm test",
     "postversion": "git push --no-verify && git push --tags --no-verify",
     "lint": "eslint . --config .eslintrc",
